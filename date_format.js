@@ -67,7 +67,7 @@
             }
             return format;
         },
-        nextYearOneDay:function(day){ //明年的今日
+        nextYearOneDay:function(day){ //明年的此刻
                 if(day === undefined){
                     day = this.dateFormat();
                 }
@@ -75,6 +75,9 @@
                 var y = date.getFullYear();
                 var m = date.getMonth()+1;
                 var d = date.getDate();
+                var h = date.getHours();
+                var i = date.getMinutes();
+                var s = date.getSeconds();
                 var nextY = parseInt(y)+1;
                 var nextM = parseInt(m);
                 var nextd = parseInt(d);
@@ -90,7 +93,7 @@
                         nextd = '29'
                     }
                 }
-                return nextY + '-' + nextM + '-' + nextd;
+            return Date.parse(nextY + '-' + nextM + '-' + nextd +' ' + h + ':' + i + ':' + s);
         }
     });
 })(jQuery);
