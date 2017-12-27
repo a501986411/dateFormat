@@ -1,10 +1,10 @@
 ;(function(){
     $.extend({
         dateFormat:function(format,unixTime){
-            if(format === undefined){
+            if(format === undefined || format==''){
                 format = 'Y-M-D H:I:S'
             }
-            if(unixTime === undefined){
+            if(unixTime === undefined || unixTime==''){
                 unixTime = Date.now();
             }
             var date = new Date(unixTime);
@@ -68,7 +68,7 @@
             return format;
         },
         nextYearOneDay:function(day){ //明年的此刻
-                if(day === undefined){
+                if(day === undefined || day == ''){
                     day = this.dateFormat();
                 }
                 var date = new Date(Date.parse(day));

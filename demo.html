@@ -8,9 +8,9 @@
 <script src="date_format.js"></script>
 <script>
     //格式化日期
-    document.write($.dateFormat('Y年M月D日 H:I'));
+    document.write($.dateFormat('Y年M月D日 H:I',1514363220000));
 
     document.write('<br/>');
     //获取明年的今天， 指定日期
-    document.write($.nextYearOneDay('2000-11-30'));
+    document.write($.dateFormat('Y年M月D日 H:I:S',$.nextYearOneDay('2017-12-12')));
 </script>
